@@ -40,6 +40,16 @@ public: // メンバ関数
 	/// </summary>
 	void Draw();
 
+
+	void PlayerUpdate();
+
+	void BeamUpdate();
+
+	void BeamMove();
+
+	void BeamBorn();
+
+
 private: // メンバ変数
 	DirectXCommon* dxCommon_ = nullptr;
 	Input* input_ = nullptr;
@@ -48,4 +58,27 @@ private: // メンバ変数
 	/// <summary>
 	/// ゲームシーン用
 	/// </summary>
+	//BG(スプライト)
+uint32_t textureHandleBG_ = 0;
+	Sprite* spriteBG_ = nullptr;
+	//ビュープロジェクション(共通)
+	ViewProjection viewProjection_;
+	//ステージ
+	uint32_t textureHandleStage_ = 0;
+	Model* modelStage_ = nullptr;
+	WorldTransform worldTransformStage_;
+
+
+	//プレイヤー
+	uint32_t textureHandlePlayer_ = 0;
+	Model* modelPlayer_ = nullptr;
+	WorldTransform worldTransformPlayer_;
+
+	//ビーム
+	uint32_t textureHandleBeam_ = 0;
+	Model* modelBeam_ = nullptr;
+	WorldTransform worldTransformBeam_;
+
+int beamFlag_ = 0;
+
 };
